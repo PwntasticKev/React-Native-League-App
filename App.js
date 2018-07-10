@@ -1,6 +1,7 @@
 import React from "react"
-import { StyleSheet, Text, View, TextInput } from "react-native"
+import { StyleSheet, Text, View, TextInput, Card } from "react-native"
 import Header from "./Components/Header"
+import Cards from "./Components/Cards/Cards"
 
 export default class App extends React.Component {
   render() {
@@ -9,7 +10,7 @@ export default class App extends React.Component {
         <View style={styles.header}>
           <Header />
         </View>
-        <Text>testing i hate react native</Text>
+        <Cards />
       </View>
     )
   }
@@ -20,8 +21,6 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 48,
     paddingBottom: 48,
-    paddingLeft: 32,
-    paddingRight: 32,
     width: "100%"
 
     // alignItems: "center"
