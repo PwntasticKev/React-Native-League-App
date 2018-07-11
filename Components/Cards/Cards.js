@@ -6,7 +6,12 @@ export default class Cards extends Component {
   constructor() {
     super()
     this.state = {
-      cardFlip: false
+      cardFlip: false,
+      title: ["Dark Harvest"],
+      category: ["Domination"],
+      definition: [
+        "Champions, large minions, and large monsters drop soul essence on death. Touch souls to absorb them and deal bonus damage on your next attack based on total soul essence collected."
+      ]
     }
   }
 
@@ -26,7 +31,9 @@ export default class Cards extends Component {
               style={styles.image}
               source={require("../img/domination-hood.png")}
             />
-            <Text>TEXTTT</Text>
+            <Text style={styles.test}>{this.state.title[0]}</Text>
+            <Text style={styles.category}>{this.state.category[0]}</Text>
+            <Text style={styles.test}>{this.state.definition}</Text>
           </View>
         </Card>
       </View>
@@ -45,13 +52,26 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     paddingTop: 10
   },
-  card: {},
+  card: {
+    flex: 1,
+    justifyContent: "center"
+  },
   image: {
     height: 100,
-    width: 100
+    width: 100,
+    left: 105
   },
   imageContainer: {
-    // flex: 1,
-    // justifyContent: "center"
+    flex: 0,
+    justifyContent: "center",
+    textAlign: "center"
+  },
+  test: {
+    textAlign: "center"
+  },
+  category: {
+    color: "red",
+    textAlign: "center",
+    fontSize: 22
   }
 })
